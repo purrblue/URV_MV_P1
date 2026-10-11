@@ -66,6 +66,7 @@ def actualitzar_semestre(tipus):
                     title="Conteo de homicidio doloso a nivel nacional (2015-2025)",
                     labels={"value": "Valor absoluto"}
                 )
+    fig.update_traces(showlegend=False)
     return fig
 
 
@@ -88,6 +89,7 @@ def actualizar_juliol(tipus):
                     labels={"value": "Valor absoluto"}
                 )
         
+    fig.update_traces(showlegend=False)
     return fig
 
 
