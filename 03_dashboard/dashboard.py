@@ -81,22 +81,11 @@ app.layout = html.Div([
     ## Explicació del dashboard
     html.Div(className="content-wrapper", children=[
         html.P( [
-            "En este panel se pueden consultar los registros oficiales del SESNSP para contrastar la narrativa gubernamental sobre el descenso de homicidios. ",
-            "El panel expone las cifras de incidencia, pero es indispensable considerar que estas no reflejan la realidad de la violencia en México. Es necesario ",
-            "considerar los ajustes metodológicos y correcciones en los datos abiertos, ",
-            "el aumento en las desapariciones.", 
+            "En este panel se pueden consultar los datos oficiales del SESNSP y RNPDNO para contrastar la narrativa gubernamental sobre el descenso de homicidios. ",
+            "El panel expone las cifras de incidencia, pero se debe considerar también los ajustes metodológicos y correcciones en los datos abiertos, " ,
+            "así como otros factores.", 
             ], className="subtitol-context"
         ),
-        html.P([
-            "Se incluye el promedio diario con una escala que evita la falsa percepción. ",
-            "Asimismo, se incorpora el ", html.Strong("conteo absoluto "), "porque detrás de cada cifra del promedio diario hay una persona.",
-            ], className="subtitol-context"
-        ),
-        html.P(
-            html.Strong("Cada vida cuenta."),
-            className="subtitol-context"
-        ),
-
         ## Gràfics
         html.Div(className="contenidor-principal", children=[
             
@@ -110,7 +99,7 @@ app.layout = html.Div([
                         dcc.RadioItems(id="sem_select_type", options=[{"label": " Promedio diario", "value": "promig"}, {"label": " Conteo absoluto", "value": "absolut"}], value="promig", inline=True)
                     ]),
                     html.Div(id="sem_desap_container", className="contenidor-desapareguts ocult-vis", children=[
-                        dcc.Checklist(id="sem_show_desap", options=[{"label": " ¿Y los desaparecidos?", "value": "yes"}], value=[], inline=True)
+                        dcc.Checklist(id="sem_show_desap", options=[{"label": " Añadir Desaparecidos y No Localizados", "value": "yes"}], value=[], inline=True)
                     ])
                 ]),
                 html.Div(className="grafic-wrapper", children=[
